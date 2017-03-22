@@ -11,6 +11,8 @@
 Check out using git clone and then run
 
 ```bash
+git clone git@github.com:JochenHeizmann/Docker-NGINX-PHP5-MariaDB-Dev-Environment.git
+cd Docker-NGINX-PHP5-MariaDB-Dev-Environment
 ./run.sh
 ```
 
