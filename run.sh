@@ -19,3 +19,5 @@ docker                                                      \
     -v "${DIR}/docker/nginx/sites":/etc/nginx/sites-enabled \
     -v "${DIR}/www":/var/www                                \
     ${IMAGE_NAME}:1.0
+
+docker logs -f ${INSTANCE_NAME}
