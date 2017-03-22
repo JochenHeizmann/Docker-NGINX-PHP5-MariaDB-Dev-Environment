@@ -16,9 +16,20 @@ cd Docker-NGINX-PHP5-MariaDB-Dev-Environment
 ./run.sh
 ```
 
-This will build the docker image and runs an instance.
+This will build the docker image and run an instance without any need for you to set up volumes or expose ports.
 
-The db is synced into docker/mysql/db
+## MariaDB ##
 
-The document root of nginx is the www subfolder.
+* database: db
+* username: root
+* password: 
 
+The db is synced into `docker/mysql/db` of the host.
+
+Port 3306 is exposed, so you can directly connect to the DB from your Host system.
+
+## NGINX ##
+
+The document root of nginx is the `www` subfolder.
+
+Port 80 is exposed, so you can browse to 127.0.0.1 on your local machine.
