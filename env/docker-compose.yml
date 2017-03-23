@@ -1,0 +1,15 @@
+front:
+  build: ./nginx-php5
+  ports:
+    - "80:80"
+  volumes:
+    - ./../public:/var/www
+  links:
+    - mariadb:mysql
+
+mariadb:
+  build: ./mariadb
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./mariadb/db:/var/lib/mysql

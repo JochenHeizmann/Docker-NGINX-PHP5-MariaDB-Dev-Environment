@@ -1,6 +1,6 @@
 # README #
 
-## PHP5, MariaDB and nginx in a single docker instance ##
+## NGINX, PHP5, MariaDB ##
 
 ### What is this repository for? ###
 
@@ -13,7 +13,7 @@ Check out using git clone and then run
 ```bash
 git clone git@github.com:JochenHeizmann/Docker-NGINX-PHP5-MariaDB-Dev-Environment.git
 cd Docker-NGINX-PHP5-MariaDB-Dev-Environment
-./run.sh
+docker-compose -f env/docker-compose.yml up -d
 ```
 
 This will build the docker image and run an instance without any need for you to set up volumes or expose ports.
@@ -24,12 +24,12 @@ This will build the docker image and run an instance without any need for you to
 * username: root
 * password: 
 
-The db is synced into `docker/mysql/db` of the host.
+The db is synced into `env/mariadb/db` of the host.
 
 Port 3306 is exposed, so you can directly connect to the DB from your Host system.
 
 ## NGINX ##
 
-The document root of nginx is the `www` subfolder.
+The document root of nginx is the `public` subfolder.
 
 Port 80 is exposed, so you can browse to 127.0.0.1 on your local machine.

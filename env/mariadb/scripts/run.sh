@@ -7,9 +7,9 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
     echo "=> Installing MariaDB ..."
     mysql_install_db > /dev/null 2>&1
     echo "=> Done!"  
-    sh mariadb_init.sh
+    sh init_db.sh
 else
     echo "=> Using an existing volume of MariaDB"
 fi
 
-/usr/bin/supervisord
+exec mysqld_safe
